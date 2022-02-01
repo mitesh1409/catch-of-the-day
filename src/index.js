@@ -1,8 +1,9 @@
 import StorePicker from "./components/StorePicker";
+import App from "./components/App";
 import { render } from "react-dom";
 import './css/style.css';
 
 render(
-    <StorePicker />,
+    <App />,
     document.getElementById('main')
 );
