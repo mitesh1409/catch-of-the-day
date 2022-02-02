@@ -7,6 +7,8 @@ class StorePicker extends React.Component {
             <form className="store-selector">
                 <h2>Please Enter A Store</h2>
 
+                <button onClick={this.handleClick}>Click Me!</button>
+
                 <input
                     type="text"
                     required
@@ -17,6 +19,10 @@ class StorePicker extends React.Component {
                 <button type='submit'>Visit Store →</button>
             </form>
         );
+    }
+
+    handleClick() {
+        alert('Heyyyyy!');
     }
 }
 
