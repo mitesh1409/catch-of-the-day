@@ -2,11 +2,6 @@ import React from 'react';
 import { getFunName } from '../helpers';
 
 class StorePicker extends React.Component {
-    constructor() {
-        super();
-        this.goToStore = this.goToStore.bind(this);
-    }
-
     storeNameInput = React.createRef();
 
     render() {
@@ -27,7 +22,7 @@ class StorePicker extends React.Component {
         );
     }
 
-    goToStore(event) {
+    goToStore = (event) => {
         console.log('goToStore', this);
         // Stop the form from reloading the page on submit.
         event.preventDefault();
