@@ -40,6 +40,9 @@ class AddFishForm extends React.Component {
             desc: this.descRef.current.value,
             image: this.imageRef.current.value,
         };
+
+        // Add this fish to the state.
+        this.props.addFish(fish);
     }
 }
 
