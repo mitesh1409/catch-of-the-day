@@ -4,6 +4,7 @@ import Inventory from './Inventory';
 import Order from './Order';
 import sampleFishes from '../sample-fishes';
 import Fish from './Fish';
+import rebase from '../base';
 
 class App extends React.Component {
     // Define and initialize a state.
@@ -11,6 +12,22 @@ class App extends React.Component {
         fishes: {},
         order: {}
     };
+
+    constructor() {
+        super();
+    }
+
+    componentDidMount() {
+        const params = this.props.match.params;
+        this.ref = rebase.syncState(`${params.storeId}/fishes`, {
+            context: this,
+            state: 'fishes'
+        });
+    }
+
+    componentWillUnmount() {
+        rebase.removeBinding(this.ref);
+    }
 
     // Set a property to add a fish.
     addFish = (fish) => {
