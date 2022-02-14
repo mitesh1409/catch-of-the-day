@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 // This is the Stateless Functional Component
 const Header = (props) => (
     <header className='top'>
@@ -13,5 +15,9 @@ const Header = (props) => (
         </h3>
     </header>
 );
+
+Header.propTypes = {
+    tagline: PropTypes.string.isRequired
+};
 
 export default Header;
